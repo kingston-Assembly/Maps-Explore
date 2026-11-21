@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Maps Explorer</title>
+  <meta name="description" content="Ask Gemini to find any place on Earth and explore it instantly on Google Maps. Dedicated to Engineer Peter Weru as the creator of this app.">
+  <meta name="author" content="Engineer Peter Weru">
+  <meta property="og:title" content="Maps Explorer">
+  <meta property="og:description" content="Ask Gemini to find any place on Earth and explore it instantly on Google Maps. Dedicated to Engineer Peter Weru as the creator of this app.">
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+<div id="root">
+  <div id="presets-container">
+    <div id="presets-header">
+      <div id="presets-title-area">
+        <span id="take-me-somewhere">Take me somewhere...</span>
+        <span id="creator-credit">Created by Eng. Peter Weru</span>
+      </div>
+      <button
+        type="button"
+        id="presets-toggle-btn"
+        title="Collapse presets panel"
+        aria-label="Toggle presets panel"
+        aria-expanded="true"
+      >
+        <svg class="toggle-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div id="presets-body">
+      <form id="custom-location-form">
+        <input
+          type="text"
+          id="custom-location-input"
+          placeholder="Or enter a location name (e.g. Kyoto, Serengeti, Reykjavik)..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button type="submit" id="custom-location-submit">Explore</button>
+      </form>
+      <div id="presets-category-filters" role="tablist" aria-label="Filter preset categories">
+        <button type="button" class="category-chip active" data-category="all" id="filter-all" role="tab" aria-selected="true">All</button>
+        <button type="button" class="category-chip" data-category="Nature" id="filter-nature" role="tab" aria-selected="false">🌿 Nature</button>
+        <button type="button" class="category-chip" data-category="Cities" id="filter-cities" role="tab" aria-selected="false">🏙️ Cities</button>
+        <button type="button" class="category-chip" data-category="History" id="filter-history" role="tab" aria-selected="false">🏛️ History</button>
+      </div>
+      <div id="presets"></div>
+      <div id="presets-dedication">
+        <span class="dedication-dot" aria-hidden="true">✦</span>
+        <span class="dedication-label">Dedicated to creator</span>
+        <strong class="dedication-name">Engineer Peter Weru</strong>
+      </div>
+    </div>
+  </div>
+  <div id="map">
+    <iframe
+      id="embed-map"
+      width="600"
+      height="450"
+      style="border: 0"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+  <div id="caption" class="hidden">
+    <div id="caption-body">
+      <span id="caption-text"></span>
+    </div>
+    <button
+      type="button"
+      id="caption-toggle-btn"
+      title="Collapse message"
+      aria-label="Toggle message"
+      aria-expanded="true"
+    >
+      <svg class="caption-icon-minus" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      <svg class="caption-icon-plus" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script type="module" src="/index.ts"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Maps Explorer",
+  "description": "Ask Gemini to find any place on Earth and explore it instantly on Google Maps. Dedicated to Engineer Peter Weru as the creator of this app.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
